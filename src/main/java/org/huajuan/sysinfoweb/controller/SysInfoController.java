@@ -1,6 +1,7 @@
 package org.huajuan.sysinfoweb.controller;
 
 import org.apache.commons.lang3.SystemUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,9 @@ import java.util.Map;
 
 @RestController
 public class SysInfoController {
+
+    @Value("${sys-info-web.version}")
+    private String version;
 
     @GetMapping("/sysInfo")
     public Object sysInfo() {
@@ -41,5 +45,10 @@ public class SysInfoController {
         res.put("javaVendor", javaVendor);
         
         return res;
+    }
+
+    @GetMapping("/version")
+    public String version() {
+        return version;
     }
 }
