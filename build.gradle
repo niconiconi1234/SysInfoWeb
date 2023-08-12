@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'org.huajuan'
-version = '0.0.2-SNAPSHOT'
+version = '0.0.2-SNAPHSHOT-HEALTH'
 
 java {
     sourceCompatibility = '17'
